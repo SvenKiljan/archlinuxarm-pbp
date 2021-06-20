@@ -18,6 +18,7 @@ Features
 - 4GB LPDDR4 RAM
 - 14" 1080p color active matrix TFT LCD
 - Mali T860MP4 GPU
+- 16MB SPI NAND flash storage (bootable)
 - 64GB or 128GB eMMC module (user replaceable, bootable)
 - microSD reader (bootable)
 - M.2/NGFF NVMe SSD slot (requires [a separate adapter](https://pine64.com/product/pinebook-pro-m-2-ngff-nvme-ssd-interface-adapter/?v=0446c16e2e66))
