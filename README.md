@@ -40,9 +40,9 @@ Boot Manjaro ARM kernel | ✔ |
 Internal display | ✔ |
 Keyboard | ✔ |
 Touchpad | ✔ |
-eMMC module | ✔ | As system disk and regular disk.
-microSD reader | ✔ | As system disk and regular disk. See the [compatibility list](https://wiki.pine64.org/wiki/Pinebook_Pro_Hardware_Accessory_Compatibility#microSD_Cards).
-NVME | ✔* | * As system disk and regular disk. Needs SPI to store and execute the bootloader if used as a system disk. Incompatible with Suspend to RAM. [Needs an adapter](https://pine64.com/product/pinebook-pro-m-2-ngff-nvme-ssd-interface-adapter/). See the [compatibility list](https://wiki.pine64.org/wiki/Pinebook_Pro_Hardware_Accessory_Compatibility#NVMe_SSD_drives).
+eMMC module | ✔ | As bootable system disk and regular disk.
+microSD reader | ✔ | As bootable system disk and regular disk. See the [compatibility list](https://wiki.pine64.org/wiki/Pinebook_Pro_Hardware_Accessory_Compatibility#microSD_Cards).
+NVME | ✔* | * As system disk and regular disk. Needs SPI to store and execute the bootloader if used as a system disk without eMMC or microSD storage. Incompatible with Suspend to RAM. [Needs an adapter](https://pine64.com/product/pinebook-pro-m-2-ngff-nvme-ssd-interface-adapter/). See the [compatibility list](https://wiki.pine64.org/wiki/Pinebook_Pro_Hardware_Accessory_Compatibility#NVMe_SSD_drives).
 SPI | ✔ | Only usable for the bootloader. Required when NVME is used as a system disk.
 Wireless network adapter | ✔ |
 Bluetooth | ✔ |
