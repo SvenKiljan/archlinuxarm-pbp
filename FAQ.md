@@ -1,5 +1,47 @@
 # Frequently asked questions
 
+## How do I migrate from other Arch Linux ARM releases for the Pinebook Pro?
+
+This has not been tested due to that the old repository was suddenly not available anymore. Take care, and make backups in case a reinstallation is necessary.
+
+First, open and examine `/etc/pacman.conf`. See if the following section exists:
+```
+[pinebookpro]
+Server = https://nhp.sh/pinebookpro/
+```
+
+If it exists, read on. If not, adjust the instructions accordingly.
+
+Remove installed packages from custom repository:
+
+```
+pacman -R $(for customPackage in $(pacman -Sl pinebookpro | awk '/installed.$/{print $2;}'); do customPackages="$customPackages $customPackage"; done && echo $customPackages)
+```
+
+Edit `/etc/pacman.conf` and remove the custom repository.
+
+Now run:
+
+```
+pacman-key --keyserver hkps://keys.openpgp.org/ --recv-keys A1EC3C686EF7A9DD232D1563D4D12D6AA6A92769
+pacman-key --lsign-key A1EC3C686EF7A9DD232D1563D4D12D6AA6A92769
+
+cat << 'EOF' >> /etc/pacman.conf
+
+[archlinuxarm-pbp]
+SigLevel = Optional TrustedOnly
+Server = http://pacman.kiljan.org/$repo/os/$arch
+EOF
+```
+
+Update Arch Linux ARM and install the recommended packages from the archlinuxarm-pbp repository:
+```
+pacman -Syu ap6256-firmware libdrm-pinebookpro linux-manjaro pinebookpro-audio pinebookpro-post-install towboot-pinebookpro-bin
+```
+
+If all went well, everything was replaced except the boot loader and its configuration (located in `/boot/extlinux/extlinux.conf`). The existing boot loader should be able to boot the new kernel.
+
+
 ## Why is the version of the kernel named 'MANJARO-ARM'?
 
 Manjaro ARM is the de facto operating system of the Pinebook Pro since it is installed on newer Pinebook Pro laptops by default, and as close to 'upstream' as we can get for an Arch Linux-based distribution. If improvements are made for the Pinebook Pro in the Linux kernel, it is likely that Manjaro ARM will implement them first. A while ago, Manjaro ARM included Pinebook Pro support in their mainline kernel and deprecated the Pinebook Pro specific kernel. This is why the mainline Manjaro ARM kernel is used for Arch Linux ARM. The name was kept in the version to make it clear that any bugs or improvements should be reported upstream.
