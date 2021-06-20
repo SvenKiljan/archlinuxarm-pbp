@@ -51,7 +51,7 @@ mount /dev/sdX2 root
 6. Download and extract the root filesystem (as root, not via sudo):
 
 ```
-wget https://os.kiljan.org/os/ArchLinuxARM-pbp-latest.tar.gz
+wget https://github.com/SvenKiljan/archlinuxarm-pbp/releases/latest/download/ArchLinuxARM-pbp-latest.tar.gz
 bsdtar -xpf ArchLinuxARM-pbp-latest.tar.gz -C root
 ```
 
