@@ -82,7 +82,14 @@ umount boot root
 wifi-menu
 ```
 
-13. Initialize the pacman keyring and populate the Arch Linux ARM and Pinebook Pro [package signing](https://archlinuxarm.org/about/package-signing) keys:
+13. Synchronize the system and RTC clocks:
+
+```
+timedatectl set-ntp on
+hwclock -w
+```
+
+14. Initialize the pacman keyring and populate the Arch Linux ARM and Pinebook Pro [package signing](https://archlinuxarm.org/about/package-signing) keys:
 
 ```
 pacman-key --init
