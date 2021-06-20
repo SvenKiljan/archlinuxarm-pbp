@@ -49,7 +49,7 @@ Bluetooth | ✔ |
 Audio | ✔ | Including headphone detection.
 Webcam | ✔ |
 USB | ✔ | USB-C 3.0, USB-A 3.0 and USB-A 2.0.
-External display (using USB-C DisplayPort Alternate Mode) | ✔ | Requires a [compatible USB-C dock](https://wiki.pine64.org/wiki/Pinebook_Pro_Hardware_Accessory_Compatibility#USB_C_alternate_mode_DP).
+External display (using USB-C DisplayPort Alternate Mode) | ✔* | * Requires a [compatible USB-C dock](https://wiki.pine64.org/wiki/Pinebook_Pro_Hardware_Accessory_Compatibility#USB_C_alternate_mode_DP). Tested with HDMI and DVI-D monitors. Video works, audio does not.
 | |
 Lid close detection | ✔ | Older Pinebook Pro laptops might have a misaligned magnet, [which can be fixed](https://wiki.pine64.org/wiki/Pinebook_Pro_Troubleshooting_Guide#Pinebook_Pro_will_not_sleep_with_lid_closed).
 Power down and reboot | ✔ |
