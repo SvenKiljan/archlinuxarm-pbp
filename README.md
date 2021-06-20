@@ -61,8 +61,8 @@ Video acceleration | ✔ | For YouTube playback in browsers, check the [FAQ](FAQ
 
 ## Acknowledgments
 
-[Nadia Holmquist Pedersen](https://nhp.sh/) for laying the groundwork and for providing solutions to several issues.
-All the people working on [Manjaro ARM](https://manjaro.org/), especially the contributors in the [PKGBUILDs](https://pacman.kiljan.org/archlinuxarm-pbp/).
-All the people working on [Tow-Boot](https://github.com/Tow-Boot/Tow-Boot), for providing a Pinebook Pro boot loader that supports suspend to RAM (S3).
-All the people working on [Arch Linux ARM](https://archlinuxarm.org/).
-All authors of the [ArchWiki](https://wiki.archlinux.org/).
+* [Nadia Holmquist Pedersen](https://nhp.sh/) for laying the groundwork and for providing solutions to several issues.
+* All the people working on [Manjaro ARM](https://manjaro.org/), especially the contributors in the [PKGBUILDs](https://pacman.kiljan.org/archlinuxarm-pbp/).
+* All the people working on [Tow-Boot](https://github.com/Tow-Boot/Tow-Boot), for providing a Pinebook Pro boot loader that supports suspend to RAM (S3).
+* All the people working on [Arch Linux ARM](https://archlinuxarm.org/).
+* All authors of the [ArchWiki](https://wiki.archlinux.org/).
