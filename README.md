@@ -28,7 +28,7 @@ Features
 
 ## About Arch Linux ARM on the Pinebook Pro
 
-[Arch Linux ARM](https://archlinuxarm.org/) does not officially support the Pinebook Pro. This repository provides installation images based on Arch Linux ARM with some [additional packages](https://pacman.kiljan.org/archlinuxarm-pbp/). The PKGBUILDs of these additional packages can be found [here](https://github.com/SvenKiljan/archlinuxarm-pbp-packages).
+[Arch Linux ARM](https://archlinuxarm.org/) does not officially support the Pinebook Pro. This repository provides installation images based on Arch Linux ARM with some [additional packages](https://pacman.kiljan.org/archlinuxarm-pbp/os/aarch64/). The PKGBUILDs of these additional packages can be found [here](https://github.com/SvenKiljan/archlinuxarm-pbp-packages).
 
 Manjaro ARM is the semi-official distribution of the Pinebook Pro. The device ships with it, and it seems most development for this particular device ends up in this distribution. The additional Arch Linux ARM packages to support the Pinebook Pro are mostly based on those offered by Manjaro ARM, with some minor adjustments to make them fit better in the Arch Linux ARM ecosystem.
 
