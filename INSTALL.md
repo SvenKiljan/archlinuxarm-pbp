@@ -43,7 +43,7 @@ mount /dev/sdX1 boot
 5. Create and mount the ext4 filesystem:
 
 ```
-mkfs.ext4 -L ROOT_ALARM /dev/sdX1
+mkfs.ext4 -L ROOT_ALARM /dev/sdX2
 mkdir root
 mount /dev/sdX2 root
 ```
