@@ -4,7 +4,7 @@ This repository provides root filesystems and instructions for installing and ru
 
 Installation instructions can be found here: [INSTALL.md](INSTALL.md)
 
-Root filesystems can be found here: [Releases](../Releases/)
+Root filesystems can be found here: [Releases](https://github.com/SvenKiljan/archlinuxarm-pbp/releases)
 
 If you have any issues or questions, read this first: [FAQ.md](FAQ.md)
 
