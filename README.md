@@ -60,6 +60,11 @@ Suspend to disk (S4) | ❌ | Does not work for any distribution at this time. To
  |  | 
 Video acceleration | ✔ | For YouTube playback in browsers, check the [FAQ](FAQ.md#why-is-youtube-so-slow).
 
+## More information
+
+* [Pinebook Pro on the PINE64 wiki](https://wiki.pine64.org/index.php/Pinebook_Pro)
+* [Arch Linux ARM topic in the PINE64 Pinebook Pro forum](https://forum.pine64.org/showthread.php?tid=14238)
+
 ## Acknowledgments
 
 * [Nadia Holmquist Pedersen](https://nhp.sh/) for laying the groundwork and for providing solutions to several issues.
