@@ -158,7 +158,7 @@ For the Pinebook Pro, Arch Linux ARM is configured by default to use [Suspend to
 Summarized, it is possible to enable Suspend to RAM and have it work stable under the following conditions:
 
 - Tow-Boot is installed, which it is by default.
-- No NVME drive is installed. Suspend to RAM with NVME [is currently not supported](https://forum.pine64.org/showthread.php?tid=11380).
+- No NVMe SSD is installed. Suspend to RAM with an NVMe SSD [is currently not supported](https://forum.pine64.org/showthread.php?tid=11380).
 
 To enable Suspend to RAM, run as root:
 
