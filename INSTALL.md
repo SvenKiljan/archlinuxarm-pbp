@@ -146,7 +146,7 @@ mount /dev/mmcblk2p1 /mnt/boot
 6. Transfer all data from the microSD card to the eMMC module:
 
 ```
-rsync -aAXq --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/lost+found"} /
+rsync -aAXq --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/lost+found"} / /mnt
 ```
 
 7. Install the Tow-Boot bootloader:
@@ -213,7 +213,7 @@ mount /dev/nvme0n1p1 /mnt/boot
 6. Transfer all data from the microSD card to the NVME SSD:
 
 ```
-rsync -aAXq --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/lost+found"} /
+rsync -aAXq --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/lost+found"} / /mnt
 ```
 
 7. Install the Tow-Boot bootloader in SPI flash:
