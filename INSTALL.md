@@ -1,6 +1,6 @@
 # Installation
 
-Arch Linux ARM can be installed on and booted from a microSD card, an eMMC module or an NVME SSD.
+Arch Linux ARM can be installed on and booted from a microSD card, an eMMC module or an NVMe SSD.
 
 ## Installation on microSD card or eMMC module
 
@@ -108,7 +108,7 @@ pacman-key --populate archlinuxarm-pbp
 dd if=/dev/zero of=/dev/mmcblk2 bs=1M count=32
 ```
 
-3. Start fdisk to partition the SD card or eMMC module:
+3. Start fdisk to partition the eMMC module:
 
 ```
 fdisk /dev/mmcblk2
@@ -165,17 +165,105 @@ umount -R /mnt
 9. Power off the Pinebook Pro, remove the SD card, and power it on.
 
 
-## Installation on NVME
+## Installation on NVMe SSD (staged boot using eMMC module)
 
 1. Install, boot and configure Arch Linux ARM on a microSD card first by following [these instructions](#installation-on-microsd-card-or-emmc-module).
 
-2. Zero the beginning of the NVME SSD:
+2. Zero the beginning of the eMMC module:
+
+```
+dd if=/dev/zero of=/dev/mmcblk2 bs=1M count=32
+```
+
+3. Start fdisk to partition the eMMC module:
+
+```
+fdisk /dev/mmcblk2
+```
+
+3. At the fdisk prompt, create the new partition:
+
+   a. Type **o**. This will clear out any partitions on the drive.
+
+   b. Type **p** to list partitions. There should be no partitions left.
+
+   c. Type **n**, then **p** for primary, **1** for the first partition on the drive, **32768** for the first sector, and then type **442367** for the last sector.
+
+   d. Type **t**, then **c** to set the first partition to type W95 FAT32 (LBA).
+
+   e. Write the partition table and exit by typing **w**.
+
+
+2. Zero the beginning of the NVMe SSD:
 
 ```
 dd if=/dev/zero of=/dev/nvme0n1 bs=1M count=32
 ```
 
-3. Start fdisk to partition the NVME SSD:
+3. Start fdisk to partition the NVMe SSD:
+
+```
+fdisk /dev/nvme0n1
+```
+
+3. At the fdisk prompt, create the new partition:
+
+   a. Type **o**. This will clear out any partitions on the drive.
+
+   b. Type **p** to list partitions. There should be no partitions left.
+
+   c. Type **n**, then **p** for primary, **2** for the second partition on the drive, **442368** for the first sector, and then press ENTER to accept the default last sector. 
+
+   d. Write the partition table and exit by typing **w**.
+
+4. Create and mount the ext4 filesystem:
+
+```
+mkfs.ext4 -L ROOT_ALARM /dev/nvme0n1p2
+mount /dev/nvme0n1p2 /mnt
+```
+
+5. Create and mount the FAT filesystem:
+
+```
+mkfs.vfat -n BOOT_ALARM /dev/mmcblk2p1
+mkdir -p /mnt/boot
+mount /dev/mmcblk2p1 /mnt/boot
+```
+ 
+6. Transfer all data from the microSD card to the NVMe SSD and the eMMC module:
+
+```
+rsync -aAXq --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/lost+found"} / /mnt
+```
+
+7. Install the Tow-Boot bootloader:
+
+```
+dd if=/mnt/boot/idbloader.img of=/dev/mmcblk2 seek=64 conv=notrunc,fsync
+dd if=/mnt/boot/tow-boot.itb of=/dev/mmcblk2 seek=16384 conv=notrunc,fsync
+```
+
+8. Unmount the two partitions:
+
+```
+umount -R /mnt
+```
+
+9. Power off the Pinebook Pro, remove the SD card, and power it on.
+
+
+## Installation on NVMe SSD (direct boot, buggy!)
+
+1. Install, boot and configure Arch Linux ARM on a microSD card first by following [these instructions](#installation-on-microsd-card-or-emmc-module).
+
+2. Zero the beginning of the NVMe SSD:
+
+```
+dd if=/dev/zero of=/dev/nvme0n1 bs=1M count=32
+```
+
+3. Start fdisk to partition the NVMe SSD:
 
 ```
 fdisk /dev/nvme0n1
@@ -210,7 +298,7 @@ mkdir -p /mnt/boot
 mount /dev/nvme0n1p1 /mnt/boot
 ```
  
-6. Transfer all data from the microSD card to the NVME SSD:
+6. Transfer all data from the microSD card to the NVMe SSD:
 
 ```
 rsync -aAXq --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/lost+found"} / /mnt
