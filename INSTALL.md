@@ -253,7 +253,7 @@ umount -R /mnt
 9. Power off the Pinebook Pro, remove the SD card, and power it on.
 
 
-## Installation on NVMe SSD (direct boot, buggy!)
+## Installation on NVMe SSD (direct boot, [buggy](https://github.com/SvenKiljan/archlinuxarm-pbp/blob/main/FAQ.md#why-is-direct-nvme-ssd-booting-considered-buggy)!)
 
 1. Install, boot and configure Arch Linux ARM on a microSD card first by following [these instructions](#installation-on-microsd-card-or-emmc-module).
 
