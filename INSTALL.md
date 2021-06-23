@@ -318,3 +318,71 @@ umount -R /mnt
 ```
 
 9. Power off the Pinebook Pro, remove the SD card, and power it on.
+
+
+
+## Installation on USB Mass Storage Device (MSD)
+
+1. Install, boot and configure Arch Linux ARM on a microSD card first by following [these instructions](#installation-on-microsd-card-or-emmc-module).
+
+2. Zero the beginning of the USB MSD:
+
+```
+dd if=/dev/zero of=/dev/sdX bs=1M count=32
+```
+
+3. Start fdisk to partition the USB MSD:
+
+```
+fdisk /dev/sdX
+```
+
+3. At the fdisk prompt, create the new partition:
+
+   a. Type **o**. This will clear out any partitions on the drive.
+
+   b. Type **p** to list partitions. There should be no partitions left.
+
+   c. Type **n**, then **p** for primary, **1** for the first partition on the drive, **32768** for the first sector, and then type **442367** for the last sector.
+
+   d. Type **t**, then **c** to set the first partition to type W95 FAT32 (LBA).
+
+   e. Type **n**, then **p** for primary, **2** for the second partition on the drive, **442368** for the first sector, and then press ENTER to accept the default last sector. 
+
+   f. Write the partition table and exit by typing **w**.
+
+4. Create and mount the ext4 filesystem:
+
+```
+mkfs.ext4 -L ROOT_ALARM /dev/sdX2
+mount /dev/sdX2 /mnt
+```
+
+5. Create and mount the FAT filesystem:
+
+```
+mkfs.vfat -n BOOT_ALARM /dev/sdX1
+mkdir -p /mnt/boot
+mount /dev/sdX1 /mnt/boot
+```
+ 
+6. Transfer all data from the microSD card to the USB MSD:
+
+```
+rsync -aAXq --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/lost+found"} / /mnt
+```
+
+7. Install the Tow-Boot bootloader in SPI flash:
+
+```
+flash_erase /dev/mtd0 0 0
+nandwrite -p /dev/mtd0 /mnt/boot/tow-boot.spiflash.bin
+```
+
+8. Unmount the two partitions:
+
+```
+umount -R /mnt
+```
+
+9. Power off the Pinebook Pro, remove the SD card, levae the USB MSD connected, and power it on.
