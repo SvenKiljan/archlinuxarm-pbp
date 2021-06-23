@@ -47,6 +47,15 @@ If all went well, everything was replaced except the boot loader and its configu
 Manjaro ARM is the de facto operating system of the Pinebook Pro since it is installed on newer Pinebook Pro laptops by default, and as close to 'upstream' as we can get for an Arch Linux-based distribution. If improvements are made for the Pinebook Pro in the Linux kernel, it is likely that Manjaro ARM will implement them first. A while ago, Manjaro ARM included Pinebook Pro support in their mainline kernel and deprecated the Pinebook Pro specific kernel. This is why the mainline Manjaro ARM kernel is used for Arch Linux ARM. The name was kept in the version to make it clear that any bugs or improvements should be reported upstream.
 
 
+## Why is direct NVMe SSD booting considered buggy?
+
+While testing with a Crucial P1 SSD, initially direct booting (with the bootloader in SPI) worked fine. However, after several reinstallations using the same software, the Linux kernel was unable to initialize the NVMe SSD correctly if the bootloader used it to load files from.  [This problem is also experienced by others](https://forum.pine64.org/showthread.php?tid=11699&pid=94165#pid94165). A workaround is to re-bind the PCI device to the NVMe driver, but that can only be done after the system has booted (chicken and egg problem). Another [workaround described in ArchWiki](https://wiki.archlinux.org/title/Solid_state_drive/NVMe#Controller_failure_due_to_broken_APST_support) had no effect.
+
+An alternative that 'just works' is a staged boot, in which the bootloader and the boot partition are loaded from the the eMMC module. This requires zero configuration after installation, and brings all the advantages of using NVMe. As a bonus, the SPI flash does not need to be written or used, since the ROM code of the Pinebook Pro can load the bootloader directly from eMMC.
+
+The [installation instructions](https://github.com/SvenKiljan/archlinuxarm-pbp/blob/main/INSTALL.md#installation-on-nvme-ssd-staged-boot-using-emmc-module) for a staged eMMC+NVMe boot reserve space on the NVMe SSD. This will allow a boot partition to be created later, if this issue is ever solved in the bootloader and/or in Linux.
+
+
 ## Why do secure connections fail, such as when updating the Pinebook Pro?
 
 Check the date and time with `timedatectl`. If the local time, the universal (system) time or RTC (hardware) time significantly differ from the current time, this is the likely cause of the connection problems.
