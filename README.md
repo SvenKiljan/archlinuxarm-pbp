@@ -37,27 +37,33 @@ What works:
 
 Function | Status | Remark
 --- | --- | ---
+**Basics**
 Boot Manjaro ARM kernel | ✔ |
+**Human interfacing**
 Internal display | ✔ |
 Keyboard | ✔ |
-Touchpad | ✔ |
+Touchpad | ✔ |https://github.com/SvenKiljan/archlinuxarm-pbp/blob/main/FAQ.md#why-is-direct-nvme-ssd-booting-considered-buggy
+**Storage**
+SPI | ✔ | Only usable for the bootloader. Optional to use.
 eMMC module | ✔ | As bootable system disk and regular disk.
 microSD reader | ✔ | As bootable system disk and regular disk. See the [compatibility list](https://wiki.pine64.org/wiki/Pinebook_Pro_Hardware_Accessory_Compatibility#microSD_Cards).
-NVME | ✔* | * As system disk and regular disk. Needs SPI to store and execute the bootloader if used as a system disk without eMMC or microSD storage. Incompatible with Suspend to RAM. [Needs an adapter](https://pine64.com/product/pinebook-pro-m-2-ngff-nvme-ssd-interface-adapter/). See the [compatibility list](https://wiki.pine64.org/wiki/Pinebook_Pro_Hardware_Accessory_Compatibility#NVMe_SSD_drives).
-SPI | ✔ | Only usable for the bootloader. Required when NVME is used as a system disk.
+NVMe SSD | ✔* | * As system disk and regular disk. Not directly bootable. Can be made bootable using an eMMC module (included with the notebook) or by executing the bootloader from SPI ([not recommended](https://github.com/SvenKiljan/archlinuxarm-pbp/blob/main/FAQ.md#why-is-direct-nvme-ssd-booting-considered-buggy)). Incompatible with Suspend to RAM. [Needs an adapter](https://pine64.com/product/pinebook-pro-m-2-ngff-nvme-ssd-interface-adapter/). See the [compatibility list](https://wiki.pine64.org/wiki/Pinebook_Pro_Hardware_Accessory_Compatibility#NVMe_SSD_drives).
+USB Mass Storage Devie | ✔* | * As system disk and regular disk. Not directly bootable. Can be made bootable by executing the bootloader from SPI.
+**Other internal hardware**
 Wireless network adapter | ✔ |
 Bluetooth | ✔ |
 Audio | ✔ | Including headphone detection.
 Webcam | ✔ |
+**Expansion ports**
 USB | ✔ | USB-C 3.0, USB-A 3.0 and USB-A 2.0.
 External display (using USB-C DisplayPort Alternate Mode) | ✔* | * Requires a [compatible USB-C dock](https://wiki.pine64.org/wiki/Pinebook_Pro_Hardware_Accessory_Compatibility#USB_C_alternate_mode_DP). Tested with HDMI and DVI-D monitors. Video works, [audio does not](https://forum.manjaro.org/t/no-hdmi-audio-on-pinebook-pro/50203/2).
-| |
+**Energy management** | |
 Lid close detection | ✔ | Older Pinebook Pro laptops might have a misaligned magnet, [which can be fixed](https://wiki.pine64.org/wiki/Pinebook_Pro_Troubleshooting_Guide#Pinebook_Pro_will_not_sleep_with_lid_closed).
 Power down and reboot | ✔ |
 Suspend to Idle | ✔ | Consumes around 5% battery capacity every hour.
 Suspend to RAM (S3) | ✔* | * Experimental and incompatible with NVME. See [this FAQ entry](FAQ.md#why-does-the-system-consume-so-much-energy-when-sleeping).
 Suspend to disk (S4) | ❌ | Does not work for any distribution at this time. To compensate somewhat for this shortcoming, consider using a desktop environment that can restore a previous session, such as Plasma.
- |  | 
+**Other** |  | 
 Video acceleration | ✔ | For YouTube playback in browsers, check the [FAQ](FAQ.md#why-is-youtube-so-slow).
 
 ## More information
