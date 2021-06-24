@@ -49,7 +49,7 @@ Manjaro ARM is the de facto operating system of the Pinebook Pro since it is ins
 
 ## Why is direct NVMe SSD booting considered buggy?
 
-While testing with a Crucial P1 SSD, initially direct booting (with the bootloader in SPI) worked fine. However, after several reinstallations using the same software, the Linux kernel was unable to initialize the NVMe SSD correctly if the bootloader used it to load files from.  [This problem is also experienced by others](https://forum.pine64.org/showthread.php?tid=11699&pid=94165#pid94165). A workaround is to re-bind the PCI device to the NVMe driver, but that can only be done after the system has booted (chicken and egg problem). Another [workaround described in ArchWiki](https://wiki.archlinux.org/title/Solid_state_drive/NVMe#Controller_failure_due_to_broken_APST_support) had no effect.
+While testing with a Crucial P1 SSD, initially direct booting (with the bootloader in SPI) worked fine. However, after several reinstallations using the same software, the Linux kernel was unable to initialize the NVMe SSD correctly if the bootloader used it to load files from. [This problem is also experienced by others](https://forum.pine64.org/showthread.php?tid=11699&pid=94165#pid94165). A workaround is to re-bind the PCI device to the NVMe driver, but that can only be done after the system has booted (chicken and egg problem). Another [workaround described in ArchWiki](https://wiki.archlinux.org/title/Solid_state_drive/NVMe#Controller_failure_due_to_broken_APST_support) had no effect.
 
 An alternative that 'just works' is a staged boot, in which the bootloader and the boot partition are loaded from the the eMMC module. This requires zero configuration after installation, and brings all the advantages of using NVMe. As a bonus, the SPI flash does not need to be written or used, since the ROM code of the Pinebook Pro can load the bootloader directly from eMMC.
 
@@ -66,9 +66,9 @@ To set the local timezone, first see what the name is of the local timezone base
 timedatectl list-timezones
 ```
 
-Now set the local timezone by running as root (where <timezone> is a timezone from the list in the format Continent/City):
+Now set the local timezone by running as root (replace Content/City with the value from the list given by the previous command):
 ```
-timedatectl set-timezone <timezone>
+timedatectl set-timezone Continent/City
 ```
 
 To automatically synchronize the system time with online NTP servers, run as root:
@@ -178,7 +178,7 @@ The Pinebook Pro misses information about which wireless frequencies are allowed
 
 ## Why is USB-C video output not working?
 
-If you use a USB-C dock, connect the monitor first to the dock, then connect the dock to the Pinebook Pro. Also, disconnect and reconnect the dock after boot once if video output is not working.
+If you use a [compatible](https://wiki.pine64.org/wiki/Pinebook_Pro_Hardware_Accessory_Compatibility#USB_C_alternate_mode_DP) USB-C dock, connect the monitor first to the dock, then connect the dock to the Pinebook Pro. Also, disconnect and reconnect the dock after boot once if video output is not working.
 
 Note that [HDMI audio is not working at this time](https://forum.manjaro.org/t/no-hdmi-audio-on-pinebook-pro/50203/2).
 
@@ -196,4 +196,4 @@ There are a couple of issues, and solutions to those issues:
 
 1. By default, full video acceleration is not enabled in the browser. Verify this in Firefox in `about:support` (Graphics, Features, Compositing will be 'Basic') or in Chrome/Chromium in `chrome://gpu` (Graphics Feature Status, Video Decode will be 'Software only'). To enable hardware acceleration in Firefox, open `about:config` and set `layers.acceleration.force-enabled` to `true`. To do the same in Chrome/Chromium, open `chrome://flags` and enable `#enable-accelerated-video-decode`. Restart the browser to apply the changes.
 1. The RK3399 does support YouTube's H.264 and VP9 codec profiles, but only for standard frame rate formats (24-30 FPS) and not for high frame rate formats (48-60 FPS). A browser extension can be used to force YouTube to use standard frame rate formats, such as Enhancer for YouTube ([Firefox](https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/), [Chrome/Chromium](https://chrome.google.com/webstore/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle)).
-1. It seems the Pinebook Pro is struggling with VP9 in YouTube. As a workaround, force the use of H.264. This can also be done with Enhancer for YouTube.
+1. It seems the Pinebook Pro is struggling with VP9 as used by YouTube in some situations. As a workaround, force the use of H.264. This can also be done with Enhancer for YouTube.
