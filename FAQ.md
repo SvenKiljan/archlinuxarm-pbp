@@ -170,9 +170,17 @@ After suspending and resuming, `dmesg` will report **PM: suspend (deep)**. This 
 
 Note that suspend to RAM is still experimental. Rarely the system might refuse to go to sleep. See the reason with `dmesg`, and consider reporting it upstream. If the system refuses to go to sleep, simply try it again.
 
+  
 ## Why is wireless networking performing poorly or not at all, especially on 5 GHz bands?
 
 The Pinebook Pro misses information about which wireless frequencies are allowed to be used in your region. To specify the region, install package `crda` and uncomment the line that relates to the correct country in `/etc/conf.d/wireless-regdom`. Reboot after the modification to apply the change.
+
+
+## Why is the maximum audio volume so low?
+
+The root filesystem ships with the semi-official recommended volume settings.  You can boost the volume by opening `alsamixer` and increasing 'headphone' volume (the first volume bar). Note that there are four settings, which control the amplification before the analog audio gets send to either speakers or headphones. dB gain -48 is the default. -24 seems to be equal to -48. -12 boosts the volume, and makes the audio clip on the internal speakers on maximum volume. With -0, clipping starts above 50% volume on the internal speakers.
+  
+Remember that bad sound kills good music, and tinnitus sounds awful. Be careful when messing around with volumes, especially with headphones.
 
 
 ## Why is YouTube so slow?
