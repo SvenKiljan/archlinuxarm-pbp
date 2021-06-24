@@ -176,6 +176,13 @@ Note that suspend to RAM is still experimental. Rarely the system might refuse t
 The Pinebook Pro misses information about which wireless frequencies are allowed to be used in your region. To specify the region, install package `crda` and uncomment the line that relates to the correct country in `/etc/conf.d/wireless-regdom`. Reboot after the modification to apply the change.
 
 
+## Why is USB-C video output not working?
+
+If you use a USB-C dock, connect the monitor first to the dock, then connect the dock to the Pinebook Pro. Also, disconnect and reconnect the dock after boot once if video output is not working.
+
+Note that [HDMI audio is not working at this time](https://forum.manjaro.org/t/no-hdmi-audio-on-pinebook-pro/50203/2).
+
+
 ## Why is the maximum audio volume so low?
 
 The root filesystem ships with the semi-official recommended volume settings.  You can boost the volume by opening `alsamixer` and increasing 'headphone' volume (the first volume bar). Note that there are four settings, which control the amplification before the analog audio gets send to either speakers or headphones. dB gain -48 is the default. -24 seems to be equal to -48. -12 boosts the volume, and makes the audio clip on the internal speakers on maximum volume. With -0, clipping starts above 50% volume on the internal speakers.
