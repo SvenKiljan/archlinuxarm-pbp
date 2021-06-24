@@ -61,7 +61,7 @@ External display (using USB-C DisplayPort Alternate Mode) | ✔* | * Requires a 
 Lid close detection | ✔ | Older Pinebook Pro laptops might have a misaligned magnet, [which can be fixed](https://wiki.pine64.org/wiki/Pinebook_Pro_Troubleshooting_Guide#Pinebook_Pro_will_not_sleep_with_lid_closed).
 Power down and reboot | ✔ |
 Suspend to Idle | ✔ | Consumes around 5% battery capacity every hour.
-Suspend to RAM (S3) | ✔* | * Experimental and incompatible with NVME. See [this FAQ entry](FAQ.md#why-does-the-system-consume-so-much-energy-when-sleeping).
+Suspend to RAM (S3) | ✔* | * Experimental and incompatible with NVMe. See [this FAQ entry](FAQ.md#why-does-the-system-consume-so-much-energy-when-sleeping).
 Suspend to disk (S4) | ❌ | Does not work for any distribution at this time. To compensate somewhat for this shortcoming, consider using a desktop environment that can restore a previous session, such as Plasma.
 **Other** |  | 
 Video acceleration | ✔ | For YouTube playback in browsers, check the [FAQ](FAQ.md#why-is-youtube-so-slow).
