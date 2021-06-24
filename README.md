@@ -42,7 +42,7 @@ Boot Manjaro ARM kernel | ✔ |
 **Human interfacing**
 Internal display | ✔ |
 Keyboard | ✔ |
-Touchpad | ✔ |https://github.com/SvenKiljan/archlinuxarm-pbp/blob/main/FAQ.md#why-is-direct-nvme-ssd-booting-considered-buggy
+Touchpad | ✔ |
 **Storage**
 SPI | ✔ | Only usable for the bootloader. Optional to use.
 eMMC module | ✔ | As bootable system disk and regular disk.
