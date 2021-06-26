@@ -194,6 +194,16 @@ Remember that bad sound kills good music, and tinnitus sounds awful. Be careful 
 
 There are a couple of issues, and solutions to those issues:
 
-1. By default, full video acceleration is not enabled in the browser. Verify this in Firefox in `about:support` (Graphics, Features, Compositing will be 'Basic') or in Chrome/Chromium in `chrome://gpu` (Graphics Feature Status, Video Decode will be 'Software only'). To enable hardware acceleration in Firefox, open `about:config` and set `layers.acceleration.force-enabled` to `true`. To do the same in Chrome/Chromium, open `chrome://flags` and enable `#enable-accelerated-video-decode`. Restart the browser to apply the changes.
-1. The RK3399 does support YouTube's H.264 and VP9 codec profiles, but only for standard frame rate formats (24-30 FPS) and not for high frame rate formats (48-60 FPS). A browser extension can be used to force YouTube to use standard frame rate formats, such as Enhancer for YouTube ([Firefox](https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/), [Chrome/Chromium](https://chrome.google.com/webstore/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle)).
+1. By default, full video acceleration is not enabled in the browser. Verify this in Firefox in `about:support` (Graphics, Features, Compositing will be 'Basic') or in Chromium in `chrome://gpu` (Graphics Feature Status, Video Decode will be 'Software only'). To enable hardware acceleration in Firefox, open `about:config` and set `layers.acceleration.force-enabled` to `true`. To do the same in Chromium, open `chrome://flags` and enable `#enable-accelerated-video-decode`. Restart the browser to apply the changes.
+1. The RK3399 does support YouTube's H.264 and VP9 codec profiles, but only for standard frame rate formats (24-30 FPS) and not for high frame rate formats (48-60 FPS). A browser extension can be used to force YouTube to use standard frame rate formats, such as Enhancer for YouTube ([Firefox](https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/), [Chromium](https://chrome.google.com/webstore/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle)).
 1. It seems the Pinebook Pro is struggling with VP9 as used by YouTube in some situations. As a workaround, force the use of H.264. This can also be done with Enhancer for YouTube.
+
+
+## How can I install application XYZ?
+
+This is not a Pinebook Pro specific question. To learn more about Arch Linux (on which Arch Linux ARM is based), check the [ArchWiki](https://wiki.archlinux.org/). If you cannot find your package in the [Arch Linux ARM package list](https://archlinuxarm.org/packages), and you cannot get it (installed) from the [Arch User Repository](https://aur.archlinux.org/), you might need to find some other way to get your application working.
+
+Some tips from personal experience:
+
+- Signal Desktop can be installed from the [PrivacyShark repository](https://privacyshark.zero-credibility.net/). Audio and video calls work.
+- Skype can be used through [Skype for Web](https://web.skype.com/) in Chromium. Audio and video calls work. Make sure to [enable video acceleration](#why-is-youtube-so-slow) for best results.
