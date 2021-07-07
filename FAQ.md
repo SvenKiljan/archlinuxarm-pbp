@@ -190,6 +190,13 @@ The root filesystem ships with the semi-official recommended volume settings.  Y
 Remember that bad sound kills good music, and tinnitus sounds awful. Be careful when messing around with volumes, especially with headphones.
 
 
+## Why is Bluetooth A2DP audio not working?
+
+This is due to [a bug in bluez](https://github.com/bluez/bluez/issues/157), affecting not just the Pinebook Pro. The current workaround is to install [bluez-git](https://aur.archlinux.org/packages/bluez-git/) from AUR, stop `bluetooth.service`, remove `/var/lib/bluetooth`,  and start `bluetooth.service`. After this, pair your Bluetooth audio device again.
+
+The workaround was tested with [https://wiki.archlinux.org/title/PipeWire](PipeWire) and [pipewire-pulse](https://archlinux.org/packages/?name=pipewire-pulse).
+
+
 ## Why is YouTube so slow?
 
 There are a couple of issues, and solutions to those issues:
