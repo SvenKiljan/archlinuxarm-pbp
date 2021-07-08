@@ -60,7 +60,7 @@ The [installation instructions](https://github.com/SvenKiljan/archlinuxarm-pbp/b
 
 Check the date and time with `timedatectl`. If the local time, the universal (system) time or RTC (hardware) time significantly differ from the current time, this is the likely cause of the connection problems.
 
-To set the local timezone, first see what the name is of the local timezone based on the local content and closest city (exit with CTRL-C or :q):
+To set the local timezone, first see what the name is of the local timezone based on the continent and closest city (exit with CTRL-C or :q):
 
 ```
 timedatectl list-timezones
