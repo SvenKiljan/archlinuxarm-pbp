@@ -48,7 +48,7 @@ SPI | ✔ | Only usable for the bootloader. Optional to use.
 eMMC module | ✔ | As bootable system disk and regular disk.
 microSD reader | ✔ | As bootable system disk and regular disk. See the [compatibility list](https://wiki.pine64.org/wiki/Pinebook_Pro_Hardware_Accessory_Compatibility#microSD_Cards).
 NVMe SSD | ✔* | * [Experimental](https://wiki.pine64.org/wiki/Pinebook_Pro_Troubleshooting_Guide#NVMe_SSD_issues). As system disk and regular disk. Not directly bootable. Can be made bootable using an eMMC module (included with the notebook) or by executing the bootloader from SPI ([not recommended](https://github.com/SvenKiljan/archlinuxarm-pbp/blob/main/FAQ.md#why-is-direct-nvme-ssd-booting-considered-buggy)). Incompatible with Suspend to RAM. [Needs an adapter](https://pine64.com/product/pinebook-pro-m-2-ngff-nvme-ssd-interface-adapter/). See the [compatibility list](https://wiki.pine64.org/wiki/Pinebook_Pro_Hardware_Accessory_Compatibility#NVMe_SSD_drives).
-USB Mass Storage Devie | ✔* | * As system disk and regular disk. Not directly bootable. Can be made bootable by executing the bootloader from SPI.
+USB Mass Storage Device | ✔* | * As system disk and regular disk. Not directly bootable. Can be made bootable by executing the bootloader from SPI.
 **Other internal hardware**
 Wireless network adapter | ✔ |
 Bluetooth | ✔ |
