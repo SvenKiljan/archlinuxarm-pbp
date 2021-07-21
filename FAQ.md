@@ -52,6 +52,7 @@ It might be that [/etc/fstab needs to be adjusted](https://forum.pine64.org/show
 
 Manjaro ARM is the de facto operating system of the Pinebook Pro since it is installed on newer Pinebook Pro laptops by default, and as close to 'upstream' as we can get for an Arch Linux-based distribution. If improvements are made for the Pinebook Pro in the Linux kernel, it is likely that Manjaro ARM will implement them first. A while ago, Manjaro ARM included Pinebook Pro support in their mainline kernel and deprecated the Pinebook Pro specific kernel. This is why the mainline Manjaro ARM kernel is used for Arch Linux ARM. The name was kept in the version to make it clear that any bugs or improvements should be reported upstream.
 
+The Manjaro ARM kernel used in Arch Linux ARM for Pinebook Pro is built on an Arch Linux ARM system as a pacman package. Combined with how close Manjaro ARM is to Arch Linux (ARM), its installation and use should not provide any compatibility issues.
 
 ## Why is direct NVMe SSD booting considered buggy?
 
