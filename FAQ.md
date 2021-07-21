@@ -1,5 +1,9 @@
 # Frequently asked questions
 
+## Which devices are supported?
+
+This repository goal is to make Arch Linux ARM installable and usable on the PINE64 Pinebook Pro. Other (Roockhip-based) devices might work [with some minor adjustments](https://forum.pine64.org/showthread.php?tid=14238&pid=97215#pid97215), but be prepared to work around any unforeseen complications.
+
 ## How do I migrate from other Arch Linux ARM releases for the Pinebook Pro?
 
 This has not been tested due to that the old repository was suddenly not available anymore. Take care, and make backups in case a reinstallation is necessary.
@@ -40,6 +44,8 @@ pacman -Syu ap6256-firmware libdrm-pinebookpro linux-manjaro pinebookpro-audio p
 ```
 
 If all went well, everything was replaced except the boot loader and its configuration (located in `/boot/extlinux/extlinux.conf`). The existing boot loader should be able to boot the new kernel.
+
+It might be that [/etc/fstab needs to be adjusted](https://forum.pine64.org/showthread.php?tid=14238&pid=96807#pid96807), by commenting the line referring to /boot. This is necessary if Arch Linux ARM was installed on a single partition previously.
 
 
 ## Why is the version of the kernel named 'MANJARO-ARM'?
