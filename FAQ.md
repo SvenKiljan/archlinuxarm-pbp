@@ -219,5 +219,5 @@ This is not a Pinebook Pro specific question. To learn more about Arch Linux (on
 
 Some tips from personal experience:
 
-- Signal Desktop can be installed from the [PrivacyShark repository](https://privacyshark.zero-credibility.net/). Audio and video calls work.
+- Signal Desktop can be installed from the [PrivacyShark repository](https://privacyshark.zero-credibility.net/). Audio and video calls work. The repository also has other interesting software. Its [package descriptions can be found here](https://gitlab.com/ohfp/pinebookpro-things).
 - Skype can be used through [Skype for Web](https://web.skype.com/) in Chromium. Audio and video calls work. Make sure to [enable video acceleration](#why-is-youtube-so-slow) for best results.
