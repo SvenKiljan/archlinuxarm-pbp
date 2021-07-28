@@ -65,7 +65,7 @@ Suspend to Idle | ✔ | Consumes around 5% battery capacity every hour.
 Suspend to RAM (S3) | ✔* | * Experimental and incompatible with NVMe. See [this FAQ entry](FAQ.md#why-does-the-system-consume-so-much-energy-when-sleeping).
 Suspend to disk (S4) | ❌ | Does not work for any distribution at this time. To compensate somewhat for this shortcoming, consider using a desktop environment that can restore a previous session, such as Plasma.
 **Other** |  | 
-Video acceleration | ✔ | For YouTube playback in browsers, check the [FAQ](FAQ.md#why-is-youtube-so-slow).
+Video acceleration | ❌ | For more information (also on how to enable smooth YouTube playback), check the [FAQ](FAQ.md#why-do-videos-not-play-smoothly).
 
 ## More information
 
