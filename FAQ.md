@@ -204,13 +204,11 @@ This is due to [a bug in bluez](https://github.com/bluez/bluez/issues/157), affe
 The workaround was tested with [https://wiki.archlinux.org/title/PipeWire](PipeWire) and [pipewire-pulse](https://archlinux.org/packages/?name=pipewire-pulse).
 
 
-## Why is YouTube so slow?
+## Why do videos not play smoothly?
 
-There are a couple of issues, and solutions to those issues:
+Currently, the Pinebook Pro [lacks full video hardware acceleration](https://forum.manjaro.org/t/pinebook-pro-hardware-acceleration/30136). The [driver](https://wiki.pine64.org/wiki/Pinebook_Pro#Hardware_video_decoding) is there, [but VA-API support on modern kernels is currently missing](https://github.com/bootlin/libva-v4l2-request/issues/35#issuecomment-843147661).
 
-1. By default, full video acceleration is not enabled in the browser. Verify this in Firefox in `about:support` (Graphics, Features, Compositing will be 'Basic') or in Chromium in `chrome://gpu` (Graphics Feature Status, Video Decode will be 'Software only'). To enable hardware acceleration in Firefox, open `about:config` and set `layers.acceleration.force-enabled` to `true`. To do the same in Chromium, open `chrome://flags` and enable `#enable-accelerated-video-decode`. Restart the browser to apply the changes.
-1. The RK3399 does support YouTube's H.264 and VP9 codec profiles, but only for standard frame rate formats (24-30 FPS) and not for high frame rate formats (48-60 FPS). A browser extension can be used to force YouTube to use standard frame rate formats, such as Enhancer for YouTube ([Firefox](https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/), [Chromium](https://chrome.google.com/webstore/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle)).
-1. It seems the Pinebook Pro is struggling with VP9 as used by YouTube in some situations. As a workaround, force the use of H.264. This can also be done with Enhancer for YouTube.
+The CPU of the Pinebook Pro is powerful enough to decode H.264 in 1080p at standard frame rates (24-30 FPS) in software. For browsers install Enhancer for YouTube ([Firefox](https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/), [Chromium](https://chrome.google.com/webstore/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle)), and configure it to force H.264 playback and to only use standard frame rate formats. This will allow smooth YouTube playback.
 
 
 ## How can I install application XYZ?
