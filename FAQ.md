@@ -149,7 +149,7 @@ Path | Function
 `/sys/class/power_supply/cw2015-battery/status` | Status (charging, discharging, ...)
 `/sys/class/power_supply/cw2015-battery/time_to_empty_now` | Estimated full discharge time in minutes
 `/sys/class/power_supply/cw2015-battery/voltage_now` | Charge and discharge voltage
-`/sys/class/power_supply/dc-charger/online` | DC power supply connection status (DC, USB and USB PD)
+`/sys/class/power_supply/dc-charger/online` | Power supply connection status (DC, USB and USB PD)
 `/sys/class/power_supply/tcpm-source-psy-4-0022/current_max` | Negotiated maximum power (USB PD only)
 `/sys/class/power_supply/tcpm-source-psy-4-0022/current_now` | Used power, estimation (USB PD only)
 
@@ -201,7 +201,7 @@ Remember that bad sound kills good music, and tinnitus sounds awful. Be careful 
 
 This is due to [a bug in bluez](https://github.com/bluez/bluez/issues/157), affecting not just the Pinebook Pro. The current workaround is to install [bluez-git](https://aur.archlinux.org/packages/bluez-git/) from AUR, stop `bluetooth.service`, remove `/var/lib/bluetooth`,  and start `bluetooth.service`. After this, pair your Bluetooth audio device again.
 
-The workaround was tested with [https://wiki.archlinux.org/title/PipeWire](PipeWire) and [pipewire-pulse](https://archlinux.org/packages/?name=pipewire-pulse).
+The workaround was tested with [PipeWire](https://wiki.archlinux.org/title/PipeWire) and [pipewire-pulse](https://archlinux.org/packages/?name=pipewire-pulse).
 
 
 ## Why do videos not play smoothly?
