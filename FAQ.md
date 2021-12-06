@@ -162,7 +162,7 @@ For the Pinebook Pro, Arch Linux ARM is configured by default to use [Suspend to
 
 [Tow-Boot](https://github.com/Tow-Boot/Tow-Boot) is a fork of U-Boot, and contains the fixed Trusted Firmware A. It is included in the Pinebook Pro root filesystem offered in the [Releases section](releases), and the [installation instructions](INSTALL.md) have it installed by default.
 
-Summarized, it is possible to enable Suspend to RAM and have it work stable under the following conditions:
+Summarized, it is possible to enable Suspend to RAM under the following conditions:
 
 - Tow-Boot is installed, which it is by default.
 - No NVMe SSD is installed. Suspend to RAM with an NVMe SSD [is currently not supported](https://forum.pine64.org/showthread.php?tid=11380).
@@ -175,7 +175,7 @@ mv /etc/systemd/sleep.conf.d/suspend2idle.conf{,.disabled}
 
 After suspending and resuming, `dmesg` will report **PM: suspend (deep)**. This indicates that Suspend to RAM was used.
 
-Note that suspend to RAM is still experimental. Rarely the system might refuse to go to sleep. See the reason with `dmesg`, and consider reporting it upstream. If the system refuses to go to sleep, simply try it again.
+Note that suspend to RAM is still experimental. The system might refuse to go to sleep. See the reason with `dmesg`, and consider reporting it upstream. If the system refuses to go to sleep, simply try it again. It can also be that the system refuses to wake up. In that case, press and hold the power button for 10 seconds, release, and press it again briefly to restart the system.
 
   
 ## Why is wireless networking performing poorly or not at all, especially on 5 GHz bands?
