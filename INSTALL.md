@@ -64,8 +64,7 @@ mv root/boot/* boot
 8. Install the Tow-Boot bootloader:
 
 ```
-dd if=boot/idbloader.img of=/dev/sdX seek=64 conv=notrunc,fsync
-dd if=boot/tow-boot.itb of=/dev/sdX seek=16384 conv=notrunc,fsync
+dd if=boot/Tow-Boot.noenv.bin of=/dev/sdX seek=64 conv=notrunc,fsync
 ```
 
 9. Unmount the two partitions:
@@ -152,8 +151,7 @@ rsync -aAXq --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/
 7. Install the Tow-Boot bootloader:
 
 ```
-dd if=/mnt/boot/idbloader.img of=/dev/mmcblk2 seek=64 conv=notrunc,fsync
-dd if=/mnt/boot/tow-boot.itb of=/dev/mmcblk2 seek=16384 conv=notrunc,fsync
+dd if=/mnt/boot/Tow-Boot.noenv.bin of=/dev/mmcblk2 seek=64 conv=notrunc,fsync
 ```
 
 8. Unmount the two partitions:
@@ -240,8 +238,7 @@ rsync -aAXq --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/
 7. Install the Tow-Boot bootloader:
 
 ```
-dd if=/mnt/boot/idbloader.img of=/dev/mmcblk2 seek=64 conv=notrunc,fsync
-dd if=/mnt/boot/tow-boot.itb of=/dev/mmcblk2 seek=16384 conv=notrunc,fsync
+dd if=/mnt/boot/Tow-Boot.noenv.bin of=/dev/mmcblk0 seek=64 conv=notrunc,fsync
 ```
 
 8. Unmount the two partitions:
@@ -308,7 +305,7 @@ rsync -aAXq --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/
 
 ```
 flash_erase /dev/mtd0 0 0
-nandwrite -p /dev/mtd0 /mnt/boot/tow-boot.spiflash.bin
+nandwrite -p /dev/mtd0 /mnt/boot/Tow-Boot.spi.bin
 ```
 
 8. Unmount the two partitions:
@@ -376,7 +373,7 @@ rsync -aAXq --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/
 
 ```
 flash_erase /dev/mtd0 0 0
-nandwrite -p /dev/mtd0 /mnt/boot/tow-boot.spiflash.bin
+nandwrite -p /dev/mtd0 /mnt/boot/Tow-Boot.spi.bin
 ```
 
 8. Unmount the two partitions:
