@@ -238,7 +238,7 @@ rsync -aAXq --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/
 7. Install the Tow-Boot bootloader:
 
 ```
-dd if=/mnt/boot/Tow-Boot.noenv.bin of=/dev/mmcblk0 seek=64 conv=notrunc,fsync
+dd if=/mnt/boot/Tow-Boot.noenv.bin of=/dev/mmcblk2 seek=64 conv=notrunc,fsync
 ```
 
 8. Unmount the two partitions:
