@@ -1,6 +1,6 @@
 # Installation
 
-Arch Linux ARM can be installed on and booted from a microSD card, an eMMC module or an NVMe SSD.
+Arch Linux ARM can be installed on and booted from a microSD card, an eMMC module, an NVMe SSD or a USB Mass Storage Device.
 
 ## Installation on microSD card or eMMC module
 
@@ -382,4 +382,4 @@ nandwrite -p /dev/mtd0 /mnt/boot/Tow-Boot.spi.bin
 umount -R /mnt
 ```
 
-9. Power off the Pinebook Pro, remove the SD card, levae the USB MSD connected, and power it on.
+9. Power off the Pinebook Pro, remove the SD card, leave the USB MSD connected, and power it on.
